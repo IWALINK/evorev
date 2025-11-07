@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography System Test</title>
+    <link rel="stylesheet" href="/globals.css">
+    <style>
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f9fafb;
+        }
+        .test-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .test-section h2 {
+            color: #00caa0;
+            border-bottom: 2px solid #00caa0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .font-sample {
+            padding: 1rem;
+            margin: 1rem 0;
+            background: #f3f4f6;
+            border-left: 4px solid #00caa0;
+            border-radius: 0.25rem;
+        }
+        .alphabet {
+            font-size: 1.2em;
+            letter-spacing: 0.05em;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+        .status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+        .status.loaded {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .status.missing {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: #00caa0; margin-bottom: 3rem;">
+        🎨 Typography System Test
+    </h1>
+
+    <!-- Saans SemiBold Test -->
+    <div class="test-section">
+        <h2>Saans SemiBold (600) <span class="status loaded" id="status-saans-sb">✓ Loaded</span></h2>
+        <div class="font-sample" style="font-family: var(--font-heading); font-weight: 600;">
+            <div style="font-size: 3rem; margin-bottom: 0.5rem;">
+                Transformez votre business
+            </div>
+            <div style="font-size: 2rem;">
+                Innovation & Performance
+            </div>
+            <div class="alphabet">
+                ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                abcdefghijklmnopqrstuvwxyz<br>
+                0123456789 !@#$%^&*()
+            </div>
+        </div>
+    </div>
+
+    <!-- Saans Medium Test -->
+    <div class="test-section">
+        <h2>Saans Medium (500) <span class="status loaded" id="status-saans-md">✓ Loaded</span></h2>
+        <div class="font-sample" style="font-family: var(--font-heading); font-weight: 500;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">
+                Features & Benefits
+            </div>
+            <div style="font-size: 1.5rem;">
+                Solutions professionnelles
+            </div>
+            <div class="alphabet">
+                ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                abcdefghijklmnopqrstuvwxyz<br>
+                0123456789 !@#$%^&*()
+            </div>
+        </div>
+    </div>
+
+    <!-- Inter Variable Test -->
+    <div class="test-section">
+        <h2>Inter Variable (100-900) <span class="status loaded" id="status-inter">✓ Loaded</span></h2>
+        <div class="font-sample" style="font-family: var(--font-body);">
+            <div style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1rem;">
+                <strong>Large body text:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cette police variable 
+                offre une excellente lisibilité pour le contenu long.
+            </div>
+            <div style="font-size: 1rem; line-height: 1.6; margin-bottom: 1rem;">
+                <strong>Standard body text:</strong> The quick brown fox jumps over the lazy dog. 
+                Le renard brun rapide saute par-dessus le chien paresseux. 0123456789.
+            </div>
+            <div style="font-size: 0.875rem; line-height: 1.6;">
+                <strong>Small body text:</strong> Perfect for captions and fine print. 
+                Parfait pour les légendes et les petits caractères.
+            </div>
+            <div class="alphabet" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <span style="font-weight: 300;">Light</span>
+                <span style="font-weight: 400;">Regular</span>
+                <span style="font-weight: 500;">Medium</span>
+                <span style="font-weight: 600;">Semibold</span>
+                <span style="font-weight: 700;">Bold</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SFMono Test -->
+    <div class="test-section">
+        <h2>SFMono (Monospace) <span class="status loaded" id="status-mono">✓ Loaded</span></h2>
+        <div class="font-sample" style="font-family: var(--font-mono);">
+            <code style="display: block; font-size: 1rem; line-height: 1.6;">
+                // JavaScript code example<br>
+                function greet(name: string) {<br>
+                &nbsp;&nbsp;return `Hello, ${name}!`;<br>
+                }<br>
+                <br>
+                const message = greet('World');<br>
+                console.log(message);
+            </code>
+            <div class="alphabet" style="margin-top: 1rem;">
+                ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                abcdefghijklmnopqrstuvwxyz<br>
+                0123456789 !@#$%^&*()_+-=[]{}|;:'",.&lt;&gt;?/
+            </div>
+        </div>
+    </div>
+
+    <!-- Honk Sans Test -->
+    <div class="test-section">
+        <h2>Honk Sans (Decorative) <span class="status loaded" id="status-decorative">✓ Loaded</span></h2>
+        <div class="font-sample" style="font-family: var(--font-decorative);">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #00caa0;">
+                ✨ Special Announcement! ✨
+            </div>
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">
+                🎉 Limited Time Offer 🎉
+            </div>
+            <p style="font-size: 1rem; color: #6b7280; margin-top: 1rem;">
+                <strong>⚠️ Attention:</strong> Use sparingly! This decorative font is for special accents only.
+            </p>
+        </div>
+    </div>
+
+    <!-- Combined Example -->
+    <div class="test-section">
+        <h2>Combined Real-World Example</h2>
+        <div style="background: linear-gradient(135deg, #00caa0 0%, #000000 100%); padding: 3rem; border-radius: 1rem; color: white; text-align: center;">
+            <h1 style="color: white; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem;">
+                Welcome to EvoRev
+            </h1>
+            <p style="font-size: clamp(1rem, 2vw, 1.25rem); margin-bottom: 2rem; opacity: 0.9;">
+                Professional typography for modern web applications.
+                Inter Variable ensures excellent readability.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn-primary" style="background: white; color: #00caa0; padding: 1rem 2rem; border: none; border-radius: 0.5rem; cursor: pointer; font-weight: 500;">
+                    Get Started
+                </button>
+                <button class="btn-secondary" style="background: transparent; color: white; padding: 1rem 2rem; border: 2px solid white; border-radius: 0.5rem; cursor: pointer; font-weight: 500;">
+                    Learn More
+                </button>
+            </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+            <div style="border: 2px solid #e5e7eb; padding: 1.5rem; border-radius: 0.5rem;">
+                <h4 style="margin-bottom: 0.75rem;">Fast Performance</h4>
+                <p class="text-body-sm" style="color: #6b7280; margin-bottom: 1rem;">
+                    Optimized font loading with variable font support for best performance.
+                </p>
+                <code style="background: #f3f4f6; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem;">
+                    npm install evorev
+                </code>
+            </div>
+
+            <div style="border: 2px solid #e5e7eb; padding: 1.5rem; border-radius: 0.5rem;">
+                <h4 style="margin-bottom: 0.75rem;">Beautiful Design</h4>
+                <p class="text-body-sm" style="color: #6b7280; margin-bottom: 1rem;">
+                    Carefully crafted typography hierarchy for professional appearance.
+                </p>
+                <span class="text-decorative" style="color: #00caa0; font-size: 1.5rem;">
+                    ✨ Award Winning
+                </span>
+            </div>
+
+            <div style="border: 2px solid #e5e7eb; padding: 1.5rem; border-radius: 0.5rem;">
+                <h4 style="margin-bottom: 0.75rem;">Type Safe</h4>
+                <p class="text-body-sm" style="color: #6b7280; margin-bottom: 1rem;">
+                    Full TypeScript support with auto-completion and type checking.
+                </p>
+                <code style="background: #f3f4f6; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem;">
+                    import { Typography }
+                </code>
+            </div>
+        </div>
+    </div>
+
+    <!-- Performance Info -->
+    <div class="test-section" style="background: #fffbeb; border: 2px solid #fbbf24;">
+        <h2 style="color: #d97706; border-color: #fbbf24;">📊 Performance Info</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <div>
+                <strong>Saans Medium:</strong><br>
+                <span class="text-caption">~50KB (WOFF2)</span>
+            </div>
+            <div>
+                <strong>Saans SemiBold:</strong><br>
+                <span class="text-caption">~50KB (WOFF2)</span>
+            </div>
+            <div>
+                <strong>Inter Variable:</strong><br>
+                <span class="text-caption">~120KB (WOFF2)</span>
+            </div>
+            <div>
+                <strong>SFMono:</strong><br>
+                <span class="text-caption">0KB (System)</span>
+            </div>
+            <div>
+                <strong>Honk Sans:</strong><br>
+                <span class="text-caption">0KB (System)</span>
+            </div>
+            <div>
+                <strong>Total:</strong><br>
+                <span class="text-caption" style="color: #16a34a; font-weight: 600;">~220KB</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if fonts are actually loaded
+        document.fonts.ready.then(function() {
+            console.log('✅ All fonts loaded');
+            
+            // Check each font
+            const checks = [
+                { name: 'Saans', weight: '600', id: 'status-saans-sb' },
+                { name: 'Saans', weight: '500', id: 'status-saans-md' },
+                { name: 'Inter', weight: '400', id: 'status-inter' },
+                { name: 'SFMono', weight: '400', id: 'status-mono' },
+                { name: 'Honk Sans', weight: '500', id: 'status-decorative' },
+            ];
+            
+            checks.forEach(check => {
+                const loaded = document.fonts.check(`${check.weight} 16px "${check.name}"`);
+                const statusEl = document.getElementById(check.id);
+                
+                if (!loaded) {
+                    statusEl.textContent = '⚠ Fallback';
+                    statusEl.classList.remove('loaded');
+                    statusEl.classList.add('missing');
+                    console.warn(`⚠️ ${check.name} (${check.weight}) not loaded`);
+                } else {
+                    console.log(`✓ ${check.name} (${check.weight}) loaded`);
+                }
+            });
+        });
+
+        // Log available fonts
+        console.log('📚 Available fonts:', Array.from(document.fonts).map(f => f.family));
+    </script>
+
+    <footer style="text-align: center; padding: 2rem; color: #6b7280; margin-top: 2rem;">
+        <p class="text-body-sm">
+            Typography System Test Page • Open DevTools Console for detailed font loading info
+        </p>
+    </footer>
+</body>
+</html>
+
