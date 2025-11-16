@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import {
   TrendingUp,
   Shield,
@@ -9,6 +11,12 @@ import {
   Users,
   ArrowRight,
 } from "lucide-react";
+
+// Import circular images component with no SSR
+const CircularProfileImages = dynamic(
+  () => import("./CircularProfileImages"),
+  { ssr: false }
+);
 
 const features = [
   {
@@ -20,7 +28,7 @@ const features = [
   {
     icon: Shield,
     label: "Sécurisé",
-    subtitle: "Remboursement garanti",
+    subtitle: "Remboursement Intégral",
     position: "right",
   },
   {
@@ -42,15 +50,26 @@ export default function Opportunity() {
     triggerOnce: true,
     threshold: 0.1,
   });
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <section id="opportunity" className="py-24 relative overflow-hidden">
+      {/* Circular profile images positioned throughout the entire section */}
+      <div className="hidden lg:flex absolute inset-0 pointer-events-none z-0 items-center justify-center">
+        <CircularProfileImages inView={inView} />
+      </div>
 
-
-
-      <div className="container-custom">
+      <div className="container-custom relative z-10">
         {/* Important notice */}
-       
+
 
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left side - Text content */}
@@ -70,7 +89,7 @@ export default function Opportunity() {
               Obligations de Participation 2026
             </h2>
             <p className="font-sans text-xl md:text-2xl text-gray-500 max-w-xl lg:max-w-none mb-10 leading-relaxed">
-              Un produit financier à fort rendement, sécurisé et à impact social.
+              Une opportunité à fort rendement, sécurisé et à impact social.
             </p>
             {/* <a
               href="#details"
@@ -251,7 +270,7 @@ export default function Opportunity() {
                 <TrendingUp className="w-6 h-6 text-white" strokeWidth={2} />
               </div>
               <h3 className="font-heading font-bold text-xl text-green-800 mb-2">
-                Doublez votre investissement
+                Doublez votre capital
               </h3>
               <p className="font-sans text-gray-700 text-[18px] leading-relaxed">
                 Rendement de 50% à 100% + remboursement intégral du capital investi en 6 mois.
@@ -263,10 +282,10 @@ export default function Opportunity() {
                 <Shield className="w-6 h-6 text-white" strokeWidth={2} />
               </div>
               <h3 className="font-heading font-bold text-xl text-gray-900 mb-2">
-                Investissement sécurisé
+                Capital sécurisé
               </h3>
               <p className="font-sans text-gray-700 text-[18px] leading-relaxed">
-                Remboursement garanti au terme de 6 mois, période débutant le 1er janvier 2026.
+                Remboursement au terme de 6 mois, période débutant le 1er janvier 2026.
               </p>
             </div>
 
@@ -278,7 +297,7 @@ export default function Opportunity() {
                 Accessible dès 500 CHF
               </h3>
               <p className="font-sans text-gray-700 text-[18px] leading-relaxed">
-                652 obligations disponibles. Investissez selon vos moyens, participez au changement.
+                652 obligations disponibles. Participez selon vos moyens, soutenez la jeunesse et l'entrepreneuriat Suisse.
               </p>
             </div>
 
@@ -305,7 +324,7 @@ export default function Opportunity() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-4 rounded-full font-sans font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 transform"
             >
-              Investir Maintenant
+              Participer Maintenant
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

@@ -3,17 +3,22 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Bell } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { scrollToSection } from "@/lib/utils";
 
 const navItems = [
-  { label: "Notre Mission", href: "mission" },
-  { label: "L'Opportunité", href: "opportunity" },
-  { label: "Programme d'Affiliation", href: "affiliation" },
-  { label: "À Propos", href: "about" },
-  { label: "FAQ", href: "faq" },
+  { label: "Notre Mission", href: "mission", isLink: false },
+  { label: "L'Opportunité", href: "opportunity", isLink: false },
+  { label: "Programme d'Affiliation", href: "affiliation", isLink: false },
+  { label: "Blog", href: "/blog", isLink: true },
+  { label: "À Propos", href: "about", isLink: false },
+  { label: "FAQ", href: "faq", isLink: false },
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -23,7 +28,7 @@ export default function Header() {
       setIsScrolled(window.scrollY > 50);
 
       // Détecter la section active
-      const sections = navItems.map(item => item.href);
+      const sections = navItems.filter(item => !item.isLink).map(item => item.href);
       const scrollPosition = window.scrollY + 150; // Offset pour la détection
 
       for (const sectionId of sections) {
@@ -48,10 +53,16 @@ export default function Header() {
       e.preventDefault();
     }
     setIsMobileMenuOpen(false);
-    // Petit délai pour permettre au menu de se fermer avant le scroll
-    setTimeout(() => {
-      scrollToSection(href);
-    }, 100);
+    
+    if (isHomePage) {
+      // Si on est sur la page d'accueil, on scroll vers la section
+      setTimeout(() => {
+        scrollToSection(href);
+      }, 100);
+    } else {
+      // Sinon, on redirige vers la page d'accueil avec l'ancre
+      window.location.href = `/#${href}`;
+    }
   };
 
   const scrollToTop = () => {
@@ -93,27 +104,56 @@ export default function Header() {
           transition={{ delay: 0.1 }}
           className="hidden lg:flex items-center gap-8"
         >
-          {navItems.map((item, index) => (
-            <button
-              key={index}
-              onClick={() => handleNavClick(item.href)}
-              className={`transition-colors duration-200 font-medium text-sm relative ${
-                activeSection === item.href
-                  ? "text-secondary"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
-            >
-              {item.label}
-              {activeSection === item.href && (
-                <motion.div
-                  layoutId="activeSection"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-secondary"
-                  initial={false}
-                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                />
-              )}
-            </button>
-          ))}
+          {navItems.map((item, index) => {
+            if (item.isLink) {
+              return (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className="transition-colors duration-200 font-medium text-sm relative text-gray-600 hover:text-gray-900"
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+            // Si on n'est pas sur la page d'accueil, utiliser un Link vers /#section
+            if (!isHomePage) {
+              return (
+                <Link
+                  key={index}
+                  href={`/#${item.href}`}
+                  className={`transition-colors duration-200 font-medium text-sm relative ${
+                    activeSection === item.href
+                      ? "text-secondary"
+                      : "text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+            return (
+              <button
+                key={index}
+                onClick={() => handleNavClick(item.href)}
+                className={`transition-colors duration-200 font-medium text-sm relative ${
+                  activeSection === item.href
+                    ? "text-secondary"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                {item.label}
+                {activeSection === item.href && (
+                  <motion.div
+                    layoutId="activeSection"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-secondary"
+                    initial={false}
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </button>
+            );
+          })}
         </motion.div>
 
         {/* Right Section */}
@@ -132,12 +172,21 @@ export default function Header() {
             <Bell size={18} />
             <span>Portail</span>
           </a>
-          <button
-            onClick={() => handleNavClick("cta")}
-            className="bg-secondary hover:bg-gray-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200"
-          >
-            Devenir Membre
-          </button>
+          {isHomePage ? (
+            <button
+              onClick={() => handleNavClick("cta")}
+              className="bg-secondary hover:bg-gray-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200"
+            >
+              Devenir Membre
+            </button>
+          ) : (
+            <Link
+              href="/#cta"
+              className="bg-secondary hover:bg-gray-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200"
+            >
+              Devenir Membre
+            </Link>
+          )}
         </motion.div>
 
         {/* Mobile Menu Button */}
@@ -161,22 +210,65 @@ export default function Header() {
             className="lg:hidden bg-white border-t border-gray-100"
           >
             <div className="px-6 py-6 space-y-1">
-              {navItems.map((item, index) => (
-                <motion.button
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  onClick={() => handleNavClick(item.href)}
-                  className={`block w-full text-left hover:bg-gray-50 transition-colors duration-200 font-medium py-3 px-4 rounded-lg ${
-                    activeSection === item.href
-                      ? "text-secondary bg-secondary/5 border-l-2 border-secondary"
-                      : "text-gray-600 hover:text-gray-900"
-                  }`}
-                >
-                  {item.label}
-                </motion.button>
-              ))}
+              {navItems.map((item, index) => {
+                if (item.isLink) {
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                    >
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block w-full text-left hover:bg-gray-50 transition-colors duration-200 font-medium py-3 px-4 rounded-lg text-gray-600 hover:text-gray-900"
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
+                  );
+                }
+                // Si on n'est pas sur la page d'accueil, utiliser un Link
+                if (!isHomePage) {
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                    >
+                      <Link
+                        href={`/#${item.href}`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`block w-full text-left hover:bg-gray-50 transition-colors duration-200 font-medium py-3 px-4 rounded-lg ${
+                          activeSection === item.href
+                            ? "text-secondary bg-secondary/5 border-l-2 border-secondary"
+                            : "text-gray-600 hover:text-gray-900"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
+                  );
+                }
+                return (
+                  <motion.button
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    onClick={() => handleNavClick(item.href)}
+                    className={`block w-full text-left hover:bg-gray-50 transition-colors duration-200 font-medium py-3 px-4 rounded-lg ${
+                      activeSection === item.href
+                        ? "text-secondary bg-secondary/5 border-l-2 border-secondary"
+                        : "text-gray-600 hover:text-gray-900"
+                    }`}
+                  >
+                    {item.label}
+                  </motion.button>
+                );
+              })}
               <motion.a
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -189,15 +281,31 @@ export default function Header() {
                 <Bell size={18} />
                 <span>Portail</span>
               </motion.a>
-              <motion.button
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: (navItems.length + 1) * 0.05 }}
-                onClick={() => handleNavClick("cta")}
-                className="w-full text-center bg-secondary hover:bg-gray-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 mt-4"
-              >
-                Devenir Membre
-              </motion.button>
+              {isHomePage ? (
+                <motion.button
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: (navItems.length + 1) * 0.05 }}
+                  onClick={() => handleNavClick("cta")}
+                  className="w-full text-center bg-secondary hover:bg-gray-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 mt-4"
+                >
+                  Devenir Membre
+                </motion.button>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: (navItems.length + 1) * 0.05 }}
+                >
+                  <Link
+                    href="/#cta"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="w-full text-center bg-secondary hover:bg-gray-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 mt-4 block"
+                  >
+                    Devenir Membre
+                  </Link>
+                </motion.div>
+              )}
             </div>
           </motion.div>
         )}

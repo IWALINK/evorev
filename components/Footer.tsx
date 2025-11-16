@@ -137,7 +137,10 @@ export default function Footer() {
               Association Évorev | Basée à Genève, Suisse 🇨🇭
             </p>
             <p className="text-gray-400">
-              Régie par le Code civil suisse | Politiquement neutre et
+              Adresse: 25 rue de Genève 1225 Chêne Bourg
+            </p>
+            <p className="text-gray-400">
+              Politiquement neutre et
               confessionnellement indépendante
             </p>
             <p className="text-gray-300 font-medium">
@@ -162,10 +165,10 @@ export default function Footer() {
             <Lock size={20} className="text-primary" />
             <span className="text-sm">Données Protégées</span>
           </div>
-          <div className="flex items-center space-x-2 text-gray-400">
+          {/* <div className="flex items-center space-x-2 text-gray-400">
             <span className="text-2xl">🇨🇭</span>
             <span className="text-sm">100% Suisse</span>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </footer>

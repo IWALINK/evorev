@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -32,9 +32,9 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Évorev - Investir dans l'avenir de la Suisse",
+  title: "Évorev - Soutenir la jeunesse et l'entrepreneuriat Suisse",
   description:
-    "Rejoignez Évorev, une association dédiée à la jeunesse et à l'entrepreneuriat suisse. Une opportunité unique d'allier un investissement à fort potentiel de rendement et un impact social direct et local.",
+    "Rejoignez Évorev une association dédiée au soutien de la jeunesse et à l'entrepreneuriat Suisse. Une opportunité unique d'allier du capital à un impact social direct et local",
   keywords: [
     "investissement",
     "Suisse",
@@ -55,11 +55,12 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

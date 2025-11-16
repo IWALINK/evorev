@@ -21,11 +21,10 @@ export default function CTA() {
           className="text-center mb-16"
         >
           <h2 className="font-heading font-bold text-4xl md:text-5xl text-secondary mb-4">
-            Prêt à façonner l&apos;avenir{" "}
-            <span className="gradient-text">avec nous ?</span>
+            Prêt à façonner l&apos;avenir avec nous ?
           </h2>
           <p className="font-sans text-xl text-gray-600 max-w-3xl mx-auto">
-            Investissez, devenez membre, ou les deux. Votre engagement fait la
+            Participez, devenez membre. Votre engagement fait la
             différence.
           </p>
         </motion.div>
@@ -55,7 +54,7 @@ export default function CTA() {
               rel="noopener noreferrer"
               className="w-full text-center bg-white hover:bg-gray-50 text-secondary px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200  inline-block"
             >
-              Accéder au Portail d&apos;Investissement
+              Accéder au portail
             </a>
           </motion.div>
 
@@ -115,9 +114,7 @@ export default function CTA() {
                 Transactions Sécurisées
               </h4>
               <p className="font-sans text-gray-600 leading-relaxed">
-                Toutes les transactions (investissement, adhésion, affiliation)
-                sont gérées de manière sécurisée sur notre portail partenaire. La
-                création d&apos;un compte est simple, rapide et sécurisée.
+                Toutes les transactions sont gérées de manière sécurisée sur notre portail partenaire. La création d&apos;un compte est simple, rapide et sécurisée.
               </p>
             </div>
           </div>

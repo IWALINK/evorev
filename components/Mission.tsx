@@ -7,24 +7,24 @@ import { useState, useEffect } from "react";
 const missionBlocks = [
   {
     title: "Fédérer la finance et l'impact social",
-    text: "Évorev est une association suisse à but non lucratif qui révolutionne l'insertion professionnelle. En investissant dans nos obligations de participation, vous soutenez des jeunes talents et des startups innovantes.",
+    text: "Évorev est une association suisse à but non lucratif qui révolutionne l'insertion professionnelle. En participant dans nos obligations, vous soutenez des jeunes talents et des startups innovantes.",
     icon: "🤝",
     gradient: "from-blue-600 to-blue-800",
-    image: "https://media.istockphoto.com/id/1602814557/fr/photo/couple-mature-canap%C3%A9-et-ordinateur-portable-pour-la-planification-du-financement-le.jpg?s=2048x2048&w=is&k=20&c=I5eQ9Xd1eohgTgPEMzoOYIntGUvFJo0wSWmayS8_R84=",
+    image: "https://unboundxinc.com/wp-content/uploads/2025/03/community-01.png",
   },
   {
     title: "Notre approche : du potentiel à la réussite",
     text: "Nous accompagnons les jeunes talents et les startups à travers des parcours qualifiants, des communautés d'apprentissage et le développement d'outils numériques.",
     icon: "📈",
     gradient: "from-gray-200 to-gray-300",
-    image: 'https://media.istockphoto.com/id/827498286/fr/photo/ceux-qui-travaillent-dur-gagner.jpg?s=2048x2048&w=is&k=20&c=9oUqrzBBYrCGF3qSmOSZaiW3jSsgbRmrzD2vrJXwY0Y='
+    image: 'https://unboundxinc.com/wp-content/uploads/2025/03/tools-03.png'
   },
   {
     title: "Un investissement transparent et engagé",
-    text: "Chaque franc investi dans Évorev finance directement des programmes d'insertion, des formations qualifiantes et des projets entrepreneuriaux portés par de jeunes Suisses.",
+    text: "Évorev investit directement des programmes d'insertion, des formations qualifiantes et des projets entrepreneuriaux portés par de jeunes Suisses.",
     icon: "💎",
     gradient: "from-gray-700 to-gray-900",
-    image: 'https://plus.unsplash.com/premium_photo-1677675634231-70bbe246db1f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1335'
+    image: 'https://unboundxinc.com/wp-content/uploads/2025/03/tools-02.png'
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Mission() {
   };
 
   return (
-    <section id="mission" className="bg-black py-24 md:py-32">
+    <section id="mission" className="bg-gradient-to-b from-black to-primary py-24 md:py-32">
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -67,7 +67,7 @@ export default function Mission() {
           className="text-center mb-16"
         >
           <h2 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight max-w-5xl mx-auto">
-            Plus qu&apos;un investissement,{" "}
+            Plus qu&apos;un financement,{" "}
             <span className="text-white">un mouvement pour l&apos;impact social</span>
           </h2>
         </motion.div>
@@ -169,11 +169,12 @@ export default function Mission() {
             </div> */}
             <div className="flex-1 ">
               <h4 className="font-heading font-bold text-lg text-primary mb-5">
-                Timing de votre investissement
+                Calendrier de votre retour valorisé
               </h4>
               <p className="font-sans text-white leading-relaxed sm:text-4xl text-2xl">
-                La période de 6 mois débute le 1er janvier 2026 pour tout investissement réalisé avant cette date.
-                Pour les investissements effectués après le 1er janvier 2026, la période de 6 mois commence à la date de votre investissement.
+                {/* La période de 6 mois débute le 1er janvier 2026 pour tout investissement réalisé avant cette date.
+                Pour les investissements effectués après le 1er janvier 2026, la période de 6 mois commence à la date de votre investissement. */}
+                Votre participation travail et son remboursement intervient au terme de 6 mois à compter du 1er janvier 2026.
               </p>
             </div>
           </div>

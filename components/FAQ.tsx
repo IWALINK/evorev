@@ -8,17 +8,17 @@ const faqs = [
   {
     question: "Quand commence le délai de 6 mois pour le remboursement ?",
     answer:
-      "Le délai de 6 mois commence le 1er janvier 2026, quelle que soit votre date d'investissement. Si vous investissez après cette date, le délai débute à votre date d'investissement.",
+      "Pour toute participation enregistrée avant le 1er janvier 2026, le délai de 6 mois commencera à cette date. Pour toute participation ultérieure, il débutera le jour de votre engagement.",
   },
   {
-    question: "Mon capital est-il vraiment garanti ?",
+    question: "Pourquoi mon Capital est t'il sécurisé ?",
     answer:
-      "Oui. Votre capital initial est garanti et vous sera remboursé intégralement au terme des 6 mois, en plus de vos rendements.",
+      "⁠Votre capital initial est remboursé au terme de 6 mois",
   },
   {
-    question: "Puis-je investir et devenir membre simultanément ?",
+    question: "Puis-je participer et devenir membre simultanément ?",
     answer:
-      "Absolument. L'investissement dans les obligations et l'adhésion à l'association sont deux démarches distinctes mais complémentaires. La cotisation de membre est de 20 CHF/an.",
+      "Absolument. La participation dans les obligations et l'adhésion à l'association sont deux démarches distinctes mais complémentaires. La cotisation de membre est de 20 CHF/an.",
   },
   {
     question: "Comment fonctionne exactement le programme de parrainage ?",
@@ -26,9 +26,9 @@ const faqs = [
       "Connectez-vous à la plateforme pour obtenir votre code de parrainage unique. Partagez-le avec vos proches. Lorsqu'une personne investit en utilisant votre code, vous recevez 10% du montant investi directement sur votre compte.",
   },
   {
-    question: "Où va exactement mon argent ?",
+    question: "Où vont les fonds ?",
     answer:
-      "Vos fonds financent des startups suisses à fort potentiel et des programmes d'insertion professionnelle pour jeunes. Vous recevrez des rapports détaillés sur l'utilisation des fonds.",
+      "Vos fonds financent des startups suisses à fort potentiel et des programmes d'insertion professionnelle pour les jeunes",
   },
 ];
 
@@ -112,9 +112,9 @@ export default function FAQ() {
             href="https://portal.evorev.ch"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-secondary hover:bg-gray-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 inline-block"
+            className="bg-primary  text-white px-5 py-3 rounded-full text-sm font-semibold transition-all duration-200 inline-block"
           >
-            Contactez-nous via le Portail
+            Connecter vous au portail
           </a>
         </motion.div>
       </div>

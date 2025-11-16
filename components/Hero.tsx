@@ -39,7 +39,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source
-            src="https://media.istockphoto.com/id/1363141305/fr/vid%C3%A9o/des-personnes-cr%C3%A9atives-r%C3%A9fl%C3%A9chissent-%C3%A0-un-projet-de-d%C3%A9marrage-et-%C3%A0-une-collaboration.mp4?s=mp4-640x640-is&k=20&c=R7pTEZUrku949QEf6bnmrYTKAN-m4dMwJHUzBhrWP-4="
+            src="https://unboundxinc.com/wp-content/uploads/2025/03/7644386-uhd_4096_2160_24fps-online-video-cutter.com-1-1-1.mp4"
             type="video/mp4"
           />
         </video>
@@ -60,7 +60,7 @@ export default function Hero() {
               <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.15] md:leading-[1.1] tracking-tight">
                 <span className="text-white">
                   Investir dans l&apos;avenir de la{" "}
-                  <span className="text-primary">Suisse</span>, c&apos;est investir dans sa jeunesse.
+                  <span className="text-primary">Suisse</span>, c&apos;est soutenir sa jeunesse.
                 </span>
                 <span className="block mt-2 md:mt-3">
                   <motion.span
@@ -69,7 +69,7 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
-                    className="gradient-text"
+                    className="text-primary backdrop-blur-md bg-white/10 rounded-xl md:rounded-2xl border border-white/30 px-4 py-2 md:px-6 md:py-3 inline-block"
                   >
                     {rotatingWords[currentWordIndex]}
                   </motion.span>
@@ -78,10 +78,7 @@ export default function Hero() {
             </div>
 
             <p className="font-sans text-sm sm:text-base md:text-lg text-white leading-relaxed max-w-2xl mx-auto">
-              Rejoignez Évorev, une association dédiée à la jeunesse et à
-              l&apos;entrepreneuriat suisse. Une opportunité unique d&apos;allier un
-              investissement à fort potentiel de rendement et un impact social
-              direct et local.
+              {"Rejoignez Évorev une association dédiée au soutien de la jeunesse et à l'entrepreneuriat Suisse. Une opportunité unique d'allier du capital à un impact social direct et local."}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 items-center justify-center">
@@ -91,7 +88,7 @@ export default function Hero() {
               >
                 Découvrir l&apos;opportunité
               </button>
-              
+
               <a
                 href="https://portal.evorev.ch"
                 target="_blank"
