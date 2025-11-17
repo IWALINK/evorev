@@ -95,7 +95,8 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="/documents/statuts.pdf"
+                  href="/status Evorev signés.pdf"
+                  download="Statuts Evorev.pdf"
                   className="flex items-center space-x-2 text-gray-300 hover:text-primary transition-colors"
                 >
                   <FileText size={18} />
