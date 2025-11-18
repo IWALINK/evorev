@@ -31,7 +31,7 @@ export type ApiResponse<T> = {
   errors?: string;
 };
 
-const API_BASE_URL = "http://localhost:8000/api";
+const API_BASE_URL = "https://back.evorevresearch.ch/api";
 
 export async function fetchProjects(): Promise<Project[]> {
   try {
