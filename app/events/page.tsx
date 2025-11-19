@@ -9,7 +9,7 @@ import { fetchEvents } from "@/lib/api";
 export const metadata: Metadata = {
   title: "Événements | Évorev",
   description:
-    "Découvrez les prochains événements organisés par Évorev et rejoignez notre communauté.",
+    "Découvrez les événements organisés par Évorev et rejoignez notre communauté.",
 };
 
 const formatDate = (date: string) =>
@@ -52,7 +52,7 @@ export default async function EventsPage() {
             Rejoignez nos événements
           </h1>
           <p className="mt-4 text-base text-slate-300 md:text-lg">
-            Découvrez les prochains événements organisés par Évorev et
+            Découvrez les événements organisés par Évorev et
             rencontrez notre communauté.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -81,7 +81,7 @@ export default async function EventsPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="mb-12 flex flex-col gap-3 text-center">
             <h2 className="font-heading text-3xl text-secondary md:text-4xl">
-              Prochains événements
+              Nos événements
             </h2>
             <p className="text-base text-gray-600 md:text-lg">
               Rejoignez-nous pour découvrir nos projets, rencontrer les porteurs
