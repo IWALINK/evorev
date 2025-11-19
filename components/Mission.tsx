@@ -174,7 +174,7 @@ export default function Mission() {
               <p className="font-sans text-white leading-relaxed sm:text-4xl text-2xl">
                 {/* La période de 6 mois débute le 1er janvier 2026 pour tout investissement réalisé avant cette date.
                 Pour les investissements effectués après le 1er janvier 2026, la période de 6 mois commence à la date de votre investissement. */}
-                Votre participation travail et son remboursement intervient au terme de 6 mois à compter du 1er janvier 2026.
+                Votre participation et son remboursement intervient au terme de 6 mois à compter du 1er janvier 2026.
               </p>
             </div>
           </div>

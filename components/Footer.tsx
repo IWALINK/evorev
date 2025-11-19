@@ -37,7 +37,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="https://portal.evorev.ch"
+                  href="https://investor.evorevresearch.ch"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-primary transition-colors"

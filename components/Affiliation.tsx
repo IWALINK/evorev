@@ -253,7 +253,7 @@ export default function Affiliation() {
           className="text-center mt-12 md:mt-16 lg:mt-20"
         >
           <a
-            href="https://portal.evorev.ch"
+          
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary hover:bg-gray-800 text-white px-6 md:px-8 lg:px-10 py-3 md:py-3.5 lg:py-4 rounded-full text-sm md:text-base lg:text-lg font-semibold transition-all duration-300 inline-block shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95"
@@ -269,7 +269,7 @@ export default function Affiliation() {
           className="text-center mt-12 md:mt-16 lg:mt-20"
         >
           <a
-            href="https://portal.evorev.ch"
+            href="https://investor.evorevresearch.ch"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-4 rounded-full font-sans font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 transform"

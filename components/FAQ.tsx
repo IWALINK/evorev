@@ -109,7 +109,7 @@ export default function FAQ() {
             Vous avez d&apos;autres questions ?
           </p>
           <a
-            href="https://portal.evorev.ch"
+            href="https://investor.evorevresearch.ch"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary  text-white px-5 py-3 rounded-full text-sm font-semibold transition-all duration-200 inline-block"

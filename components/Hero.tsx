@@ -90,7 +90,7 @@ export default function Hero() {
               </button>
 
               <a
-                href="https://portal.evorev.ch"
+                href="https://investor.evorevresearch.ch"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto text-center bg-white hover:bg-gray-50 text-secondary border-2 border-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 inline-block"

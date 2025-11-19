@@ -319,7 +319,7 @@ export default function Opportunity() {
           {/* CTA */}
           <div className="mt-10 text-center">
             <a
-              href="https://portal.evorev.ch"
+              href="https://investor.evorevresearch.ch"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-4 rounded-full font-sans font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 transform"

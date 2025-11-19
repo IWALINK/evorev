@@ -183,7 +183,7 @@ Placez vos images dans le dossier `public/images/` :
 ## 🔗 Liens Externes
 
 Le site intègre des liens vers le portail externe :
-- Bouton "Accéder au Portail" : `https://portal.evorev.ch`
+- Bouton "Accéder au Portail" : `https://investor.evorevresearch.ch`
 - Tous les CTA d'investissement et d'adhésion pointent vers ce portail
 
 ## 🚀 Déploiement
@@ -250,5 +250,5 @@ Utilisez Framer Motion pour ajouter des animations personnalisées :
 
 ## 🤝 Support
 
-Pour toute question, contactez-nous via le [portail Évorev](https://portal.evorev.ch).
+Pour toute question, contactez-nous via le [portail Évorev](https://investor.evorevresearch.ch).
 

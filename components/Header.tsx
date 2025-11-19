@@ -165,7 +165,7 @@ export default function Header() {
           className="hidden lg:flex items-center gap-6"
         >
           <a
-            href="https://portal.evorev.ch"
+            href="https://investor.evorevresearch.ch"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium text-[15px]"
@@ -274,7 +274,7 @@ export default function Header() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navItems.length * 0.05 }}
-                href="https://portal.evorev.ch"
+                href="https://investor.evorevresearch.ch"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors duration-200 font-medium py-3 px-4 rounded-lg"

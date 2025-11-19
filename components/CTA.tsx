@@ -49,7 +49,7 @@ export default function CTA() {
               potentiel.
             </p>
             <a
-              href="https://portal.evorev.ch"
+              href="https://investor.evorevresearch.ch" 
               target="_blank"
               rel="noopener noreferrer"
               className="w-full text-center bg-white hover:bg-gray-50 text-secondary px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200  inline-block"
@@ -77,7 +77,7 @@ export default function CTA() {
               stratégiques et rejoignez le cœur de notre communauté engagée.
             </p>
             <a
-              href="https://portal.evorev.ch"
+              href="https://investor.evorevresearch.ch"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full text-center bg-white hover:bg-gray-50 text-secondary px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200  inline-block"
