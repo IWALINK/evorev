@@ -17,7 +17,10 @@ type PageProps = {
 
 export async function generateStaticParams() {
   const projects = await fetchProjects();
-  return projects.map((project) => ({ slug: project.slug }));
+  // Filter out projects with missing required data
+  return projects
+    .filter((project) => project.slug && project.title && project.description && project.created_at)
+    .map((project) => ({ slug: project.slug }));
 }
 
 export async function generateMetadata({
@@ -25,7 +28,8 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const project = await fetchProjectBySlug(params.slug);
 
-  if (!project) {
+  // Check if project exists and has required data
+  if (!project || !project.title || !project.description || !project.created_at) {
     return {
       title: "Article introuvable | Évorev",
       description:
@@ -45,7 +49,7 @@ export async function generateMetadata({
       title: project.title,
       description: project.description,
       type: "article",
-      url: `https://evorev.ch/blog/${project.slug}`,
+      url: `https://app.evorevresearch.ch/blog/${project.slug}`,
       ...(imageUrl && {
         images: [
           {
@@ -70,7 +74,8 @@ const formatDate = (date: string) =>
 export default async function BlogArticlePage({ params }: PageProps) {
   const project = await fetchProjectBySlug(params.slug);
 
-  if (!project) {
+  // Check if project exists and has required data
+  if (!project || !project.title || !project.description || !project.created_at) {
     notFound();
   }
 
