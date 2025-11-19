@@ -9,7 +9,7 @@ const rotatingWords = ["Soutenez", "Innovez", "Ensemble"];
 
 const stats = [
   { value: "43", label: "jeunes accompagné" }, 
-  { value: "39%", label: "des taux d'insertion" },
+  { value: "39%", label: "de taux d'insertion" },
   { value: "210k CHF", label: "investis" },
   { value: "6", label: "startups soutenues" }
 ];
