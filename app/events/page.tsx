@@ -12,6 +12,10 @@ export const metadata: Metadata = {
     "Découvrez les événements organisés par Évorev et rejoignez notre communauté.",
 };
 
+// Force dynamic rendering to ensure API is called at request time
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 const formatDate = (date: string) =>
   new Date(date).toLocaleDateString("fr-CH", {
     day: "2-digit",

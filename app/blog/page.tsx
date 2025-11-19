@@ -12,6 +12,10 @@ export const metadata: Metadata = {
         "Explorez les projets en cours de financement et plongez dans les histoires détaillées qui donnent vie à la section Impact d'Évorev.",
 };
 
+// Force dynamic rendering to ensure API is called at request time
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default async function BlogPage() {
     const projects = await fetchProjects();
     const featuredProject = projects[0];

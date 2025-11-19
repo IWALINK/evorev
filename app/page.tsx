@@ -1,10 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Mission from "@/components/Mission";
-import dynamic from "next/dynamic";
+import nextDynamic from "next/dynamic";
 import HowItWorks from "@/components/HowItWorks";
 
-const Opportunity = dynamic(() => import("@/components/Opportunity"), {
+const Opportunity = nextDynamic(() => import("@/components/Opportunity"), {
   ssr: false,
 });
 import Affiliation from "@/components/Affiliation";
@@ -15,6 +15,10 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { fetchProjects } from "@/lib/api";
+
+// Force dynamic rendering to ensure API is called at request time
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function Home() {
   const projects = await fetchProjects();

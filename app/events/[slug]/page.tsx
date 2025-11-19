@@ -13,13 +13,9 @@ type PageProps = {
   };
 };
 
-export async function generateStaticParams() {
-  const events = await fetchEvents();
-  // Filter out events with missing required data
-  return events
-    .filter((event) => event.slug && event.title && event.description && event.event_date)
-    .map((event) => ({ slug: event.slug }));
-}
+// Force dynamic rendering to ensure API is called at request time
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function generateMetadata({
   params,

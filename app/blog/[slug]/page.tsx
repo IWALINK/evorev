@@ -15,13 +15,9 @@ type PageProps = {
   };
 };
 
-export async function generateStaticParams() {
-  const projects = await fetchProjects();
-  // Filter out projects with missing required data
-  return projects
-    .filter((project) => project.slug && project.title && project.description && project.created_at)
-    .map((project) => ({ slug: project.slug }));
-}
+// Force dynamic rendering to ensure API is called at request time
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function generateMetadata({
   params,
