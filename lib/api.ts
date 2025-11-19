@@ -83,8 +83,6 @@ export async function fetchProjectBySlug(slug: string): Promise<Project | null> 
 }
 
 export async function fetchEvents(): Promise<Event[]> {
-
-  alert("fetchEvents");
   try {
     const response = await fetch(`${API_BASE_URL}/events`, {
       cache: "no-store",
