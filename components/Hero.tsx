@@ -8,10 +8,10 @@ import { scrollToSection } from "@/lib/utils";
 const rotatingWords = ["Soutenez", "Innovez", "Ensemble"];
 
 const stats = [
-  { value: "450+", label: "Projets Réalisés" },
-  { value: "1.5k+", label: "Membres Actifs" },
-  { value: "850+", label: "Vies Impactées" },
-  { value: "10k+", label: "Bénéficiaires" }
+  { value: "43", label: "jeunes accompagné" }, 
+  { value: "39%", label: "des taux d'insertion" },
+  { value: "210k CHF", label: "investis" },
+  { value: "6", label: "startups soutenues" }
 ];
 
 export default function Hero() {

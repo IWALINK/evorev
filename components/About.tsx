@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const stats = [
   { value: 500, suffix: "+", label: "jeunes accompagnés depuis la création" },
@@ -155,7 +156,14 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-sky-300 via-blue-500 to-indigo-600" />
               <div className="relative z-10 h-full flex items-center justify-center">
                 <div className="bg-white/90 rounded-2xl shadow-xl px-8 py-9 text-center">
-                  <div className="text-8xl mb-5">🏆</div>
+                  <div className="relative w-32 h-32 mx-auto mb-5">
+                    <Image
+                      src="/PhotoCoupeDuMonde.jpg"
+                      alt="Coupe du Monde"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                   <p className="text-white/90 text-sm">
                     {/* spacer to add subtle glow beneath trophy */}
                   </p>

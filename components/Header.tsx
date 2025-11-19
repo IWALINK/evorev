@@ -11,7 +11,7 @@ const navItems = [
   { label: "Notre Mission", href: "mission", isLink: false },
   { label: "L'Opportunité", href: "opportunity", isLink: false },
   { label: "Programme d'Affiliation", href: "affiliation", isLink: false },
-  { label: "Blog", href: "/blog", isLink: true },
+  { label: "Projet courant", href: "/blog", isLink: true },
   { label: "Événements", href: "/events", isLink: true },
   { label: "À Propos", href: "about", isLink: false },
   { label: "FAQ", href: "faq", isLink: false },
