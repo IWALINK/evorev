@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FileText, Shield, Lock } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -17,8 +18,14 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="w-[180px] h-[60px] bg-secondary rounded-lg flex items-center justify-center text-white font-heading font-bold text-2xl mb-6">
-              ÉVOREV
+            <div className="mb-6">
+              <Image
+                src="/LOGO.png"
+                alt="ÉVOREV Logo"
+                width={240}
+                height={80}
+                className="h-32 w-auto"
+              />
             </div>
             <p className="text-gray-300 leading-relaxed">
               Association suisse dédiée à la jeunesse et à l&apos;entrepreneuriat.
@@ -139,6 +146,9 @@ export default function Footer() {
             </p>
             <p className="text-gray-400">
               Adresse: 25 rue de Genève 1225 Chêne Bourg
+            </p>
+            <p className="text-gray-400">
+              Email: <a href="mailto:contact@evorevresearch.ch" className="text-primary hover:underline">contact@evorevresearch.ch</a>
             </p>
             <p className="text-gray-400">
               Politiquement neutre et

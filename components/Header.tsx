@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Bell } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { scrollToSection } from "@/lib/utils";
 
@@ -89,13 +90,14 @@ export default function Header() {
           onClick={scrollToTop}
           className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
         >
-          <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#00caa0"/>
-              <circle cx="12" cy="12" r="4" fill="#00caa0"/>
-            </svg>
-          </div>
-          <span className="text-xl font-bold text-secondary font-heading">ÉVOREV</span>
+          <Image
+            src="/LOGO.png"
+            alt="ÉVOREV Logo"
+            width={200}
+            height={70}
+            className="h-32 w-auto"
+            priority
+          />
         </motion.button>
 
         {/* Desktop Navigation */}
